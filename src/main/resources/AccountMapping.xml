@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lianggzone.springboot.action.data.mybatis.dao.AuthorMapper2">
+
+    <!-- type为实体类Student，包名已经配置，可以直接写类名 -->
+    <resultMap id="accountMap" type="Account">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="money" column="money" />
+    </resultMap>
+
+    <select id="findAccountById" resultMap="accountMap" resultType="Account">
+        select id, name, money from account where id = #{id}
+    </select>
+</mapper>
